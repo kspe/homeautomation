@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: home_automation_development
+
+test:
+  <<: *default
+  database: home_automation_test
+
+production:
+  <<: *default
+  database: home_automation_production
