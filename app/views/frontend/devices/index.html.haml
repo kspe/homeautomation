@@ -6,9 +6,12 @@
       %tr
         %th Name
         %th IP Address
+        %th Device Type
     %tbody
-      %tr{'v-for' => 'device in devices' }
-        %td {{ device.name }}
-        %td {{ device.ip_address}}
+      - @devices.each do |device|
+        %tr
+          %td= device.name
+          %td= device.ip_address
+          %td= device.device_type.name
 
 

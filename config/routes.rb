@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   constraints(subdomain: 'app') do
-    root 'devices#index', as: 'frontend_root'
+    scope module: 'frontend' do
+      root 'devices#index', as: 'frontend_root'
+    end
   end
 end
