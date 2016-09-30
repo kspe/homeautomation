@@ -12,7 +12,8 @@
       %tr
         %td= device.name
         %td= device.ip_address
-        %td= device.device_type.name
+        %td
+          = link_to device.device_type.name, edit_device_type_path(device.device_type)
         %td
           .btn-group{role: 'group'}
             = link_to 'Show', device, class: 'btn btn-info'
