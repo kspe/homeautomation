@@ -3,7 +3,7 @@
 //= require jquery_ujs
 //= require vue
 
-var API_ENDPOINT = 'http://admin.home.org'
+var API_ENDPOINT = 'http://admin.kalm.pl'
 
 window.onload = function () {
   var devices = new Vue({
