@@ -1,0 +1,9 @@
+#messages{ data: { close: "true",
+                   target: "#messages" } }
+  - if notice || alert
+    .alert{ class: "#{'alert-info' if notice} #{'alert-danger' if alert}" }
+      .container
+        = notice.presence || alert.presence
+        .pull-right
+          = link_to request.original_fullpath do
+            %i.fa.fa-times.fa-1

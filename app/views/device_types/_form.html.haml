@@ -7,19 +7,24 @@
       %ul
         - @device_type.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = f.label :name
     %br/
-    = f.text_field :name
-  .field
+    = f.text_field :name, class: 'form-control'
+  .form-group
     = f.label :api
     %br/
-    = f.text_field :api
-  %h3 Controls
+    = f.text_field :api, class: 'form-control'
+  %hr
+
+  %h4 Controls
   #control-items
     = f.fields_for :control_items do |control_item|
       = render 'control_item_fields', f: control_item
-    .links
-      = link_to_add_association 'add control', f, :control_items
+    .links.pull-right
+      = link_to_add_association f, :control_items, class: 'btn btn-info' do
+        %span.glyphicon.glyphicon-plus
+        Add control
+  %br/
   .actions
-    = f.submit
+    = f.submit 'Update', class: 'btn btn-success'

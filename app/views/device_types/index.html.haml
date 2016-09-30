@@ -1,18 +1,22 @@
-%p#notice= notice
-%h1 Listing Device Types
-%table
+%h1 Device Types
+%table.table.table-stripped
   %thead
     %tr
       %th Name
       %th Api
-      %th{:colspan => "3"}
+      %th Actions
   %tbody
     - @device_types.each do |device_type|
       %tr
         %td= device_type.name
         %td= device_type.api
-        %td= link_to 'Show', device_type
-        %td= link_to 'Edit', edit_device_type_path(device_type)
-        %td= link_to 'Destroy', device_type, method: :delete, data: { confirm: 'Are you sure?' }
+        %td
+          .btn-group{role: 'group'}
+            = link_to 'Show', device_type, class: 'btn btn-info'
+            = link_to 'Edit', edit_device_type_path(device_type), class: 'btn btn-success'
+            = link_to 'Destroy', device_type, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 %br/
-= link_to 'New Device type', new_device_type_path
+.pull-right
+  = link_to new_device_type_path, class: 'btn btn-success' do
+    %span.glypicon.glyphicon-plus
+    Add device type

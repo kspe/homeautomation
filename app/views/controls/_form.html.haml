@@ -7,9 +7,9 @@
       %ul
         - @control.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = f.label :kind
     %br/
-    = f.text_field :kind
+    = f.text_field :kind, class: 'form-control'
   .actions
-    = f.submit
+    = f.submit 'Save', class: 'btn btn-success'

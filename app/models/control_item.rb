@@ -4,4 +4,8 @@ class ControlItem < ActiveRecord::Base
   def slider?
     kind == 'slider'
   end
+
+  def select_options
+    value.split(',')
+  end
 end

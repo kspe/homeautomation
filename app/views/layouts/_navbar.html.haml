@@ -1,0 +1,21 @@
+%nav.navbar.navbar-default{role: "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#main-menu", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+    #main-menu.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        .navbar-brand
+          = link_to 'Devices', devices_url
+          |
+        .navbar-brand
+          = link_to 'Devices Types', device_types_url
+          |
+        .navbar-brand
+          = link_to 'Controls', controls_url
+
+  = render "layouts/messages"

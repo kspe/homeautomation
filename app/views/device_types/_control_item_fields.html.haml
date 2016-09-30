@@ -1,17 +1,21 @@
 .nested-fields
-  .field
-    = f.label :kind
-    %br
-    = f.collection_select :kind, Control.all, :kind, :kind
-  .field
-    = f.label :name
-    %br
-    = f.text_field :name
-  .field
-    = f.label :value
-    %br
-    - if f.object.slider?
-      = f.range_field :value, in: 1..100
-    - else
-      = f.text_field :value
-  = link_to_remove_association "remove control", f
+  %table.table.table-stripped
+    %thead
+      %tr
+        %th Kind
+        %th Name
+        %th Value
+        %th Action
+    %tbody
+      %tr
+        %td
+          .form-group
+            = f.collection_select :kind, Control.all, :kind, :kind, class: 'form-control'
+        %td
+          .form-group
+            = f.text_field :name, class: 'form-control'
+        %td
+          .form-group
+            = f.text_field :value, class: 'form-control'
+        %td
+          = link_to_remove_association "x", f, class: 'btn btn-sm btn-danger'

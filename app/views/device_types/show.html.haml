@@ -1,4 +1,3 @@
-%p#notice= notice
 %p
   %strong Name:
   = @device_type.name
@@ -7,11 +6,19 @@
   = @device_type.api
 
 %h3 Controls
-- @device_type.control_items.each do |control_item|
-  = control_item.kind
-  = control_item.name
-  = control_item.value
-%br/
+%table.table.table-stripped
+  %thead
+    %tr
+      %th Kind
+      %th Name
+      %th Value
+  %tbody
+    - @device_type.control_items.each do |control_item|
+      %tr
+        %td= control_item.kind
+        %td= control_item.name
+        %td= control_item.value
+      %br/
 = link_to 'Edit', edit_device_type_path(@device_type)
 |
 = link_to 'Back', device_types_path
