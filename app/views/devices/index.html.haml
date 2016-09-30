@@ -6,6 +6,7 @@
       %th Name
       %th Ip Address
       %th Device Type
+      %th Controls
       %th Actions
   %tbody
     - @devices.each do |device|
@@ -14,6 +15,12 @@
         %td= device.ip_address
         %td
           = link_to device.device_type.name, edit_device_type_path(device.device_type)
+        %td
+          - device.device_type.control_items.each do |control_item|
+            = control_item.name
+            |
+            = device.control_value_for(control_item)
+            %br/
         %td
           .btn-group{role: 'group'}
             = link_to 'Show', device, class: 'btn btn-info'

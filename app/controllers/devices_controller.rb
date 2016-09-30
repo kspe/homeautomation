@@ -50,6 +50,8 @@ class DevicesController < ApplicationController
   end
 
   def device_params
-    params.require(:device).permit(:name, :ip_address, :device_type_id)
+    params.require(:device).permit(:name, :ip_address, :device_type_id).tap do |whitelisted|
+     whitelisted[:controls_state] = params[:device][:controls_state]
+    end
   end
 end

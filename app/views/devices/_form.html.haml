@@ -19,6 +19,26 @@
     = f.label :device_type
     %br/
     = f.collection_select :device_type_id, DeviceType.all, :id, :name, class: 'form-control'
+  %hr
+  %h4 Controls
+  - if @device.device_type
+    - if @device.control_items?
+      %table.table
+        %thead
+          %tr
+            %th Control Type
+            %th Control Name
+            %th Control Value
+        %tbody
+          - @device.device_type.control_items.each do |control_item|
+            %tr
+              = render "controls/#{control_item.kind}", control_item: control_item, control_item_value: @device.control_value_for(control_item)
+    - else
+      %span.glyphicon.glyphicon-info-sign
+      Associated Device Type has no controls defined.
+  - else
+    %span.glyphicon.glyphicon-info-sign
+    Controls can be adjusted after saving new Device
   .actions
     = f.submit 'Save', class: 'btn btn-success'
 
