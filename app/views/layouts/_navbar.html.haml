@@ -9,13 +9,16 @@
 
     #main-menu.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        .navbar-brand
+        %li
           = link_to 'Devices', devices_url
-          |
-        .navbar-brand
+        %li
           = link_to 'Devices Types', device_types_url
-          |
-        .navbar-brand
+        %li
           = link_to 'Controls', controls_url
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to 'http://app.kalm.pl', { target: '_blank' } do
+            %span.glyphicon.glyphicon-new-window
+            Open Frontend App
 
   = render "layouts/messages"
