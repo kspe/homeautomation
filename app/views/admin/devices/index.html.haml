@@ -18,8 +18,6 @@
         %td
           - device.device_type.control_items.each do |control_item|
             = control_item.name
-            |
-            = device.control_value_for(control_item)
             %br/
         %td
           .btn-group{role: 'group'}
