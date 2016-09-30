@@ -1,6 +1,13 @@
 %p#notice= notice
 %h1 Controls
-%table.table.table-stripped
+.help-message
+  %span.glyphicon.glyphicon-info-sign
+  Those acts as Control Templates - any defined Control Kind in this section will be available
+  as an option during adding Controls on Device Types. As those are templates the Control Kind is
+  copied to Control in Device Type therefore removing editing Control Template does not affect
+  Controls already defined in Device Type (editing/removing Control Templates does not affect global
+  state)
+%table.table.table-striped
   %thead
     %tr
       %th Kind

@@ -6,19 +6,8 @@
   = @device_type.api
 
 %h3 Controls
-%table.table.table-stripped
-  %thead
-    %tr
-      %th Kind
-      %th Name
-      %th Value
-  %tbody
-    - @device_type.control_items.each do |control_item|
-      %tr
-        %td= control_item.kind
-        %td= control_item.name
-        %td= control_item.value
-      %br/
+= render 'controls_table', device_type: @device_type
+%br/
 = link_to 'Edit', edit_device_type_path(@device_type)
 |
 = link_to 'Back', device_types_path

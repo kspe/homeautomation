@@ -18,6 +18,14 @@
   %hr
 
   %h4 Controls
+  .help-message
+    %span.glyphicon.glyphicon-info-sign
+    Each control has a value filed which has different meaning depending on control kind:
+    %ul
+      %li for slider the value is the numeric
+      %li for select it is a comma separated string of available options
+      %li for button it is a button label visible for front end user
+
   #control-items
     = f.fields_for :control_items do |control_item|
       = render 'control_item_fields', f: control_item

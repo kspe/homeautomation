@@ -1,15 +1,18 @@
 %h1 Device Types
-%table.table.table-stripped
+%table.table.table-striped
   %thead
     %tr
       %th Name
       %th Api
+      %th Controls
       %th Actions
   %tbody
     - @device_types.each do |device_type|
       %tr
         %td= device_type.name
         %td= device_type.api
+        %td
+          = render 'controls_table', device_type: device_type
         %td
           .btn-group{role: 'group'}
             = link_to 'Show', device_type, class: 'btn btn-info'

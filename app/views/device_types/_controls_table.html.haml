@@ -1,0 +1,12 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th Kind
+      %th Name
+      %th Value
+  %tbody
+    - device_type.control_items.each do |control_item|
+      %tr
+        %td= control_item.kind
+        %td= control_item.name
+        %td= control_item.value

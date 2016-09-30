@@ -3,8 +3,11 @@
   %strong Name:
   = @device.name
 %p
-  %strong Ip address:
+  %strong IP Address:
   = @device.ip_address
+%p
+  %strong Device Type:
+  = @device.device_type.name
 = link_to 'Edit', edit_device_path(@device)
 |
 = link_to 'Back', devices_path
