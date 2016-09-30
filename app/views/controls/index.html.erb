@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Controls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kind</th>
+      <th>Name</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @controls.each do |control| %>
+      <tr>
+        <td><%= control.kind %></td>
+        <td><%= control.name %></td>
+        <td><%= control.value %></td>
+        <td><%= link_to 'Show', control %></td>
+        <td><%= link_to 'Edit', edit_control_path(control) %></td>
+        <td><%= link_to 'Destroy', control, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Control', new_control_path %>
