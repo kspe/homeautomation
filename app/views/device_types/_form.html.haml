@@ -30,9 +30,18 @@
     = f.fields_for :control_items do |control_item|
       = render 'control_item_fields', f: control_item
     .links.pull-right
-      = link_to_add_association f, :control_items, class: 'btn btn-info' do
-        %span.glyphicon.glyphicon-plus
-        Add control
+      - if Control.any?
+        = link_to_add_association f, :control_items, class: 'btn btn-info' do
+          %span.glyphicon.glyphicon-plus
+          Add control
+      - else
+        .btn.btn-info.disabled
+          %span.glyphicon.glyphicon-plus
+          Add control
+        %span
+          You need to add at least one Control Type (in
+          = link_to 'Control Tab', controls_path
+          ) in order to create Control Items
   %br/
   .actions
     = f.submit 'Update', class: 'btn btn-success'
