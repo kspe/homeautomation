@@ -5,6 +5,13 @@
 %p
   %strong Api:
   = @device_type.api
+
+%h3 Controls
+- @device_type.control_items.each do |control_item|
+  = control_item.kind
+  = control_item.name
+  = control_item.value
+%br/
 = link_to 'Edit', edit_device_type_path(@device_type)
 |
 = link_to 'Back', device_types_path

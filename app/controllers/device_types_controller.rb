@@ -68,6 +68,6 @@ class DeviceTypesController < ApplicationController
   end
 
   def device_type_params
-    params.require(:device_type).permit(:name, :api, control_items_attributes: [ :id, :kind, :value, :_destroy ])
+    params.require(:device_type).permit(:name, :api, control_items_attributes: [ :id, :kind, :name, :value, :_destroy ])
   end
 end

@@ -15,6 +15,7 @@ gem 'cocoon'
 gem 'capistrano-rails', group: :development
 gem 'vuejs-rails'
 gem 'haml'
+gem 'haml-rails'
 
 group :development, :test do
   gem 'byebug'

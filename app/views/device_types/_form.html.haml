@@ -16,5 +16,10 @@
     %br/
     = f.text_field :api
   %h3 Controls
+  #control-items
+    = f.fields_for :control_items do |control_item|
+      = render 'control_item_fields', f: control_item
+    .links
+      = link_to_add_association 'add control', f, :control_items
   .actions
     = f.submit
