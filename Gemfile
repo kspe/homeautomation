@@ -14,6 +14,7 @@ gem 'cocoon'
 
 gem 'capistrano-rails', group: :development
 gem 'capistrano-rvm', group: :development
+gem 'capistrano3-unicorn'
 gem 'vuejs-rails'
 gem 'haml'
 gem 'haml-rails'
