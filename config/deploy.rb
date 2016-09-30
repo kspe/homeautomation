@@ -10,6 +10,8 @@ set :repo_url, 'git@github.com:ignacykasperowicz/homeautomation.git'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/rails/homeautomation'
 
+set :rvm_ruby_version, '2.2.1@homeautomation'
+
 # Default value for :pty is false
 # set :pty, true
 
