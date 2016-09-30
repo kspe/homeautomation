@@ -1,1 +1,14 @@
-Init frontend application
+%h1 Devices
+
+#devices
+  %table
+    %thead
+      %tr
+        %th Name
+        %th IP Address
+    %tbody
+      %tr{'v-for' => 'device in devices' }
+        %td {{ device.name }}
+        %td {{ device.ip_address}}
+
+
