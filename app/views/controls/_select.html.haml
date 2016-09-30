@@ -1,0 +1,6 @@
+%td
+  = control_item.kind.capitalize
+%td
+  = control_item.name
+%td
+  = select_tag("device[controls_state][#{control_item.name.parameterize}]", options_for_select(control_item.select_options, control_item_value))
