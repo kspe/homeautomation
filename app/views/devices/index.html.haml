@@ -1,18 +1,25 @@
 %p#notice= notice
 %h1 Listing Devices
-%table
+%table.table.table-stripped
   %thead
     %tr
       %th Name
-      %th Ip address
-      %th{:colspan => "3"}
+      %th Ip Address
+      %th Device Type
+      %th Actions
   %tbody
     - @devices.each do |device|
       %tr
         %td= device.name
         %td= device.ip_address
-        %td= link_to 'Show', device
-        %td= link_to 'Edit', edit_device_path(device)
-        %td= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= device.device_type.name
+        %td
+          .btn-group{role: 'group'}
+            = link_to 'Show', device, class: 'btn btn-info'
+            = link_to 'Edit', edit_device_path(device), class: 'btn btn-success'
+            = link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 %br/
-= link_to 'New Device', new_device_path
+.pull-right
+  = link_to new_device_path, class: 'btn btn-success' do
+    %span.glypicon.glyphicon-plus
+    Add new device

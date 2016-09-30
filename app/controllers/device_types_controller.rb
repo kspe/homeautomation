@@ -1,28 +1,14 @@
 class DeviceTypesController < ApplicationController
   before_action :set_device_type, only: [:show, :edit, :update, :destroy]
 
-  # GET /device_types
-  # GET /device_types.json
   def index
-    @device_types = DeviceType.all
+    @device_types = DeviceType.all.order(:name)
   end
 
-  # GET /device_types/1
-  # GET /device_types/1.json
-  def show
-  end
-
-  # GET /device_types/new
   def new
     @device_type = DeviceType.new
   end
 
-  # GET /device_types/1/edit
-  def edit
-  end
-
-  # POST /device_types
-  # POST /device_types.json
   def create
     @device_type = DeviceType.new(device_type_params)
 
@@ -37,8 +23,6 @@ class DeviceTypesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /device_types/1
-  # PATCH/PUT /device_types/1.json
   def update
     respond_to do |format|
       if @device_type.update(device_type_params)
@@ -51,8 +35,6 @@ class DeviceTypesController < ApplicationController
     end
   end
 
-  # DELETE /device_types/1
-  # DELETE /device_types/1.json
   def destroy
     @device_type.destroy
     respond_to do |format|

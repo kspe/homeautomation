@@ -1,3 +1,3 @@
 class Device < ActiveRecord::Base
-  has_one :device_type
+  belongs_to :device_type
 end

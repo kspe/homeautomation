@@ -7,13 +7,18 @@
       %ul
         - @device.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = f.label :name
     %br/
-    = f.text_field :name
-  .field
+    = f.text_field :name, class: 'form-control'
+  .form-group
     = f.label :ip_address
     %br/
-    = f.text_field :ip_address
+    = f.text_field :ip_address, class: 'form-control'
+  .form-group
+    = f.label :device_type
+    %br/
+    = f.collection_select :device_type_id, DeviceType.all, :id, :name, class: 'form-control'
   .actions
-    = f.submit
+    = f.submit 'Save', class: 'btn btn-success'
+

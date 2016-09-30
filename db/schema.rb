@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930084048) do
+ActiveRecord::Schema.define(version: 20160930102937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,13 @@ ActiveRecord::Schema.define(version: 20160930084048) do
   create_table "devices", force: :cascade do |t|
     t.string   "name"
     t.string   "ip_address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "device_type_id"
   end
 
+  add_index "devices", ["device_type_id"], name: "index_devices_on_device_type_id", using: :btree
+
   add_foreign_key "control_items", "device_types"
+  add_foreign_key "devices", "device_types"
 end

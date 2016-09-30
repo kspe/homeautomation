@@ -1,28 +1,14 @@
 class ControlsController < ApplicationController
   before_action :set_control, only: [:show, :edit, :update, :destroy]
 
-  # GET /controls
-  # GET /controls.json
   def index
-    @controls = Control.all
+    @controls = Control.all.order(:kind)
   end
 
-  # GET /controls/1
-  # GET /controls/1.json
-  def show
-  end
-
-  # GET /controls/new
   def new
     @control = Control.new
   end
 
-  # GET /controls/1/edit
-  def edit
-  end
-
-  # POST /controls
-  # POST /controls.json
   def create
     @control = Control.new(control_params)
 
@@ -37,8 +23,6 @@ class ControlsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /controls/1
-  # PATCH/PUT /controls/1.json
   def update
     respond_to do |format|
       if @control.update(control_params)
@@ -51,8 +35,6 @@ class ControlsController < ApplicationController
     end
   end
 
-  # DELETE /controls/1
-  # DELETE /controls/1.json
   def destroy
     @control.destroy
     respond_to do |format|
