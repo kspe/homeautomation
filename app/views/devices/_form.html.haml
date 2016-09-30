@@ -19,6 +19,8 @@
     = f.label :device_type
     %br/
     = f.collection_select :device_type_id, DeviceType.all, :id, :name, class: 'form-control'
+    %span.glyphicon.glyphicon-info-sign
+    Changing Device Type requires saving Device before editing Controls
   %hr
   %h4 Controls
   - if @device.device_type
