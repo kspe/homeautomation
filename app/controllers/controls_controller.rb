@@ -62,13 +62,12 @@ class ControlsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_control
-      @control = Control.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def control_params
-      params.require(:control).permit(:kind, :name, :value)
-    end
+  def set_control
+    @control = Control.find(params[:id])
+  end
+
+  def control_params
+    params.require(:control).permit(:kind, :name, :value)
+  end
 end

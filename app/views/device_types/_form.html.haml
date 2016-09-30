@@ -1,0 +1,20 @@
+= form_for(@device_type) do |f|
+  - if @device_type.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@device_type.errors.count, "error")
+        prohibited this device_type from being saved:
+      %ul
+        - @device_type.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :api
+    %br/
+    = f.text_field :api
+  %h3 Controls
+  .actions
+    = f.submit

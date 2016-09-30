@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @device.name
+%p
+  %strong Ip address:
+  = @device.ip_address
+= link_to 'Edit', edit_device_path(@device)
+|
+= link_to 'Back', devices_path

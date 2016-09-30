@@ -62,13 +62,12 @@ class DeviceTypesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_device_type
-      @device_type = DeviceType.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def device_type_params
-      params.require(:device_type).permit(:name, :api)
-    end
+  def set_device_type
+    @device_type = DeviceType.find(params[:id])
+  end
+
+  def device_type_params
+    params.require(:device_type).permit(:name, :api, control_items_attributes: [ :id, :kind, :value, :_destroy ])
+  end
 end

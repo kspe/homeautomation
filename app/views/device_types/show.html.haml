@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @device_type.name
+%p
+  %strong Api:
+  = @device_type.api
+= link_to 'Edit', edit_device_type_path(@device_type)
+|
+= link_to 'Back', device_types_path

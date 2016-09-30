@@ -14,6 +14,7 @@ gem 'cocoon'
 
 gem 'capistrano-rails', group: :development
 gem 'vuejs-rails'
+gem 'haml'
 
 group :development, :test do
   gem 'byebug'
@@ -22,5 +23,6 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'erb2haml'
 end
 
