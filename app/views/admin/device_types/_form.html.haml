@@ -16,11 +16,11 @@
   %h4 Controls
   .help-message
     %span.glyphicon.glyphicon-info-sign
-    Default value for each control item:
+    Value has following meaning:
     %ul
-      %li for slider the value field is the numeric value in range 1..100
       %li for select it is a comma separated string of available options
       %li for button it is not used
+      %li for slider it is not used
 
   #control-items
     = f.fields_for :control_items do |control_item|
