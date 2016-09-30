@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'cocoon'
 
 gem 'capistrano-rails', group: :development
+gem 'capistrano-rvm', group: :development
 gem 'vuejs-rails'
 gem 'haml'
 gem 'haml-rails'
