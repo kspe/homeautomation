@@ -1,4 +1,6 @@
-class DevicesController < ApplicationController
+class Frontend::DevicesController < ApplicationController
+  layout 'frontend'
+
   before_action :set_device, only: [:show, :edit, :update, :destroy]
 
   def index

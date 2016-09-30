@@ -1,4 +1,4 @@
-class DeviceTypesController < ApplicationController
+class Admin::DeviceTypesController < ApplicationController
   before_action :set_device_type, only: [:show, :edit, :update, :destroy]
 
   def index

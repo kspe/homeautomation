@@ -34,7 +34,7 @@
         %tbody
           - @device.device_type.control_items.each do |control_item|
             %tr
-              = render "controls/#{control_item.kind}", control_item: control_item, control_item_value: @device.control_value_for(control_item)
+              = render "admin/controls/#{control_item.kind}", control_item: control_item, control_item_value: @device.control_value_for(control_item)
     - else
       %span.glyphicon.glyphicon-info-sign
       Associated Device Type has no controls defined.
