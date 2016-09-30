@@ -1,4 +1,6 @@
 class ControlItem < ActiveRecord::Base
+  KINDS = %w(select slider button)
+
   belongs_to :device_type
 
   def slider?

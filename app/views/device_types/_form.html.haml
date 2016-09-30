@@ -20,29 +20,19 @@
   %h4 Controls
   .help-message
     %span.glyphicon.glyphicon-info-sign
-    Value for each control item has different meaning:
+    Default value for each control item:
     %ul
       %li for slider the value field is the numeric value in range 1..100
       %li for select it is a comma separated string of available options
-      %li for button it is a button label visible for front end user
+      %li for button it is not used
 
   #control-items
     = f.fields_for :control_items do |control_item|
       = render 'control_item_fields', f: control_item
     .links.pull-right
-      - if Control.any?
-        = link_to_add_association f, :control_items, class: 'btn btn-info' do
-          %span.glyphicon.glyphicon-plus
-          Add control
-      - else
-        .btn.btn-info.disabled
-          %span.glyphicon.glyphicon-plus
-          Add control
-        %br/
-        %span
-          You need to add at least one Control Type (in
-          = link_to 'Control Tab', controls_path
-          ) in order to create Control Items
+      = link_to_add_association f, :control_items, class: 'btn btn-info' do
+        %span.glyphicon.glyphicon-plus
+        Add control
   %br/
   .actions
     = f.submit 'Update', class: 'btn btn-success'

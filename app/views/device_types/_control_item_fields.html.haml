@@ -10,7 +10,7 @@
       %tr
         %td
           .form-group
-            = f.collection_select :kind, Control.all, :kind, :kind, class: 'form-control'
+            = f.select :kind, options_for_select(ControlItem::KINDS, f.object.kind), class: 'form-control'
         %td
           .form-group
             = f.text_field :name, class: 'form-control'
