@@ -43,3 +43,13 @@ The apps are deployed to DigitalOcean droplet with IP: 45.55.183.87
 * Bootstrap for admin app UI
 * Jquery Mobile for mobile app
 * Capistrano for deployment
+
+# What is missing
+
+* Specs (as this is a very initial prototype TDD was not used)
+* Security was not take into account (both in ap and server)
+* Lack of any authentication
+
+# Known issues
+
+* It looks like `Citrus Lights` API has CORS enabled and the call to this external API from mobile app is blocked
