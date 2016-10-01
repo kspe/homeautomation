@@ -21,8 +21,7 @@
             %br/
         %td
           .btn-group{role: 'group'}
-            = link_to 'Show', device, class: 'btn btn-info'
-            = link_to 'Edit', edit_device_path(device), class: 'btn btn-success'
+            = link_to 'Show/Edit', edit_device_path(device), class: 'btn btn-info'
             = link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 %br/
 .pull-right

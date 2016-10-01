@@ -19,8 +19,7 @@
                 = link_to device.name, edit_device_path(device)
         %td
           .btn-group{role: 'group'}
-            = link_to 'Show', device_type, class: 'btn btn-info'
-            = link_to 'Edit', edit_device_type_path(device_type), class: 'btn btn-success'
+            = link_to 'Show/Edit', edit_device_type_path(device_type), class: 'btn btn-info'
             = link_to 'Destroy', device_type, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 %br/
 .pull-right

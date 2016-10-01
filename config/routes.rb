@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   constraints(subdomain: 'admin') do
     scope module: 'admin' do
       resources :controls
-      resources :device_types
-      resources :devices
+      resources :device_types, except: :show
+      resources :devices, except: :show
       root 'devices#index', as: 'admin_root'
     end
   end
