@@ -9,7 +9,7 @@ class Frontend::DevicesController < ApplicationController
     @device = Device.find(params[:id])
 
     respond_to do |format|
-      if !@device.update(device_params)
+      if @device.update(device_params)
         format.json { render :show, status: :ok, location: @device }
       else
         format.json { render json: @device.errors, status: :unprocessable_entity }
