@@ -18,8 +18,6 @@ gem 'capistrano3-unicorn'
 gem 'vuejs-rails'
 gem 'haml'
 gem 'haml-rails'
-gem 'vuejs-rails'
-gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug'
