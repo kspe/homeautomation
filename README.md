@@ -34,10 +34,12 @@ The apps are deployed to DigitalOcean droplet with IP: 45.55.183.87
 * Serving by Nginx with Unicorn
 * DB is Postgresql
 
-# Technology
+# Technologies
 
 * Prototyped in Rails 4.2.5.2 (apps are separated by route scopes)
 * HAML for templating
 * Cocoon for dynamic forms
 * JBuilder for JSON API
+* Bootstrap for admin app UI
+* Jquery Mobile for mobile app
 * Capistrano for deployment
