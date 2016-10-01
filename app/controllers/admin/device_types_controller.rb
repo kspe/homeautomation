@@ -47,6 +47,7 @@ class Admin::DeviceTypesController < ApplicationController
         :kind,
         :name,
         :value,
+        :api_endpoint,
         :_destroy
       ]
     )

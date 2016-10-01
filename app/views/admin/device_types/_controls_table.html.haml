@@ -4,9 +4,11 @@
       %th Kind
       %th Name
       %th Value
+      %th API Endpoint
   %tbody
     - device_type.control_items.each do |control_item|
       %tr
         %td= control_item.kind
         %td= control_item.name
         %td= control_item.value
+        %td= control_item.api_endpoint

@@ -1,6 +1,9 @@
 #alert-popup{ 'data-role' => 'popup' }
   Ups, there was an issue when saving the data. Try again after refreshing the page.
 
+#success-popup{ 'data-role' => 'popup' }
+  Yay! Action performed successfully!
+
 #devices{ 'data-role' => 'page'}
   - @devices.each do |device|
     %div{ id: "#{device.id}", 'data-role' => 'panel', 'data-position' => 'right'}

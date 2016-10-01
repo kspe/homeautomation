@@ -4,3 +4,5 @@
   = control_item.name
 %td
   = range_field_tag("device[controls_state][#{control_item.name.parameterize}]", control_item_value, in: 1..100)
+%td
+  = control_item.api_endpoint

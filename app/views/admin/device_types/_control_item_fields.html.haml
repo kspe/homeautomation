@@ -5,6 +5,7 @@
         %th Kind
         %th Name
         %th Value
+        %th API Endpoint
         %th Action
     %tbody
       %tr
@@ -17,5 +18,8 @@
         %td
           .form-group
             = f.text_field :value, class: 'form-control'
+        %td
+          .form-group
+            = f.text_field :api_endpoint, class: 'form-control'
         %td
           = link_to_remove_association "x", f, class: 'btn btn-sm btn-danger'
