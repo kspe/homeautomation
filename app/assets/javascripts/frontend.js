@@ -24,15 +24,11 @@ $( document ).ready(function() {
       dataType: 'json',
       timeout: 5000,
       success: function(msg) {
-        $('#success-popup').show();
-        $('#success-popup').popup();
-        $('#success-popup').popup('open');
+        openPopup('#success-popup');
         console.log('Data send: ' + msg);
       },
       error: function(jqXHR, status, error) {
-        $('#alert-popup').show();
-        $('#alert-popup').popup();
-        $('#alert-popup').popup('open');
+        openPopup('#alert-popup');
         console.log('Error: ' + status + ' ' +error);
       }
     });
@@ -53,11 +49,15 @@ $( document ).ready(function() {
         console.log('Data Saved: ' + msg);
       },
       error: function(jqXHR, status, error) {
-        $('#alert-popup').show();
-        $('#alert-popup').popup();
-        $('#alert-popup').popup('open');
+        openPopup('#alert-popup');
         console.log('Error: ' + status + ' ' +error);
       }
     });
+  };
+
+  function openPopup(elem) {
+    $(elem).show();
+    $(elem).popup();
+    $(elem).popup('open');
   }
 });
