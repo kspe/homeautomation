@@ -15,3 +15,13 @@
 //= require jquery_ujs
 //= require cocoon
 //= require_tree .
+
+
+$( document ).ready(function() {
+  $('.js-device-type-select').on('change', function() {
+    var form = $(this).closest('form');
+    action = form.attr('action');
+    form.attr("action", action + '?device_type_change=true') ;
+    form.submit();
+  });
+});

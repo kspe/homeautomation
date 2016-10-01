@@ -13,7 +13,7 @@ class Admin::DeviceTypesController < ApplicationController
     @device_type = DeviceType.new(device_type_params)
 
     if @device_type.save
-      redirect_to @device_type, notice: 'Device type was successfully created.'
+      redirect_to edit_device_type_url(@device_type), notice: 'Device type was successfully created.'
     else
       render :new
     end
@@ -21,7 +21,7 @@ class Admin::DeviceTypesController < ApplicationController
 
   def update
     if @device_type.update(device_type_params)
-      redirect_to @device_type, notice: 'Device type was successfully updated.'
+      redirect_to edit_device_type_url(@device_type), notice: 'Device type was successfully updated.'
     else
       render :edit
     end

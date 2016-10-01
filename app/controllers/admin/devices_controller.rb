@@ -13,7 +13,9 @@ class Admin::DevicesController < ApplicationController
     @device = Device.new(device_params)
 
     if @device.save
-      redirect_to @device, notice: 'Device was successfully created.'
+      notice = 'Device was successfully created.' unless params[:device_type_change]
+
+      redirect_to edit_device_url(@device), notice: notice
     else
       render :new
     end
@@ -21,7 +23,9 @@ class Admin::DevicesController < ApplicationController
 
   def update
     if @device.update(device_params)
-      redirect_to @device, notice: 'Device was successfully updated.'
+      notice = 'Device was successfully updated.' unless params[:device_type_change]
+
+      redirect_to edit_device_url(@device), notice: notice
     else
       render :edit
     end
