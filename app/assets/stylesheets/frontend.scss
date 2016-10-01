@@ -1,2 +1,13 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+.ui-header {
+  background-color: #222 !important;
+  color: #fff !important;
+  text-shadow: none !important;
+  font-weight: normal !important;
+}
+
+
+#alert-popup {
+  display: none;
+  padding: 10px;
+  background-color: #f2dede;
+}

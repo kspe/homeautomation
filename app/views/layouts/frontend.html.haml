@@ -2,10 +2,13 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %title Home Automation - Frontend
     = stylesheet_link_tag    'frontend', media: 'all'
     = javascript_include_tag 'frontend'
+    %link{:href => "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"}
+
     = csrf_meta_tags
   %body
-    .container
-      = yield
+    = yield

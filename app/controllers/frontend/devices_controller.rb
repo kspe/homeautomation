@@ -1,29 +1,23 @@
 class Frontend::DevicesController < ApplicationController
   layout 'frontend'
 
-  before_action :set_device, only: :update
-
   def index
-    @devices = Device.all.order(:name)
+    @devices = Device.all.includes(device_type: :control_items).order(:name)
   end
 
   def update
+    @device = Device.find(params[:id])
+
     respond_to do |format|
-      if @device.update(device_params)
-        format.html { redirect_to @device, notice: 'Device was successfully updated.' }
+      if !@device.update(device_params)
         format.json { render :show, status: :ok, location: @device }
       else
-        format.html { render :edit }
         format.json { render json: @device.errors, status: :unprocessable_entity }
       end
     end
   end
 
   private
-
-  def set_device
-    @device = Device.include(:device_types).find(params[:id])
-  end
 
   def device_params
     params.require(:device).permit().tap do |whitelisted|

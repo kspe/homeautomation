@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   constraints(subdomain: 'app') do
     scope module: 'frontend' do
       root 'devices#index', as: 'frontend_root'
+      resources :devices, as: 'app_devices', only: [:index, :update]
     end
   end
 end

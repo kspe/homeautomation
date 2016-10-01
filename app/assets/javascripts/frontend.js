@@ -1,25 +1,35 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require vue
 
-var API_ENDPOINT = 'http://admin.kalm.pl'
-
-window.onload = function () {
-  var devices = new Vue({
-    el: '#devices',
-    data: {
-      devices: []
-    },
-    ready: function() {
-      var that;
-      that = this;
-      $.ajax({
-        url: API_ENDPOINT + '/devices.json',
-        success: function(res) {
-          that.devices = res;
-        }
-      });
-    }
+$( document ).ready(function() {
+  $('.slider').on('slidestop', function(ev) {
+    updateControlState($(this));
   });
-};
+
+  $('.select').on('change', function(ev) {
+    updateControlState($(this));
+  });
+
+  function updateControlState(elem) {
+    var form = elem.closest('form');
+    var formData = form.serialize();
+
+    $.ajax({
+      type: "PUT",
+      url: form.attr('action'),
+      data: formData,
+      dataType: 'json',
+      timeout: 5000,
+      success: function(msg) {
+        console.log( "Data Saved: " + msg );
+      },
+      error: function(jqXHR, status, error) {
+        $('#alert-popup').show();
+        $('#alert-popup').popup();
+        $('#alert-popup').popup('open');
+        console.log('Error: ' + status + ' ' +error);
+      }
+    });
+  }
+});

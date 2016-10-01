@@ -1,17 +1,22 @@
-%h1 Devices
+#alert-popup{ 'data-role' => 'popup' }
+  Ups, there was an issue when saving the data. Try again after refreshing the page.
 
-#devices
-  %table
-    %thead
-      %tr
-        %th Name
-        %th IP Address
-        %th Device Type
-    %tbody
+#devices{ 'data-role' => 'page'}
+  - @devices.each do |device|
+    %div{ id: "#{device.id}", 'data-role' => 'panel', 'data-position' => 'right'}
+      %form{ action: app_device_path(device) }
+        - device.device_type.control_items.each do |control_item|
+          .ui-content{ 'data-role' => 'main' }
+            %ul{ 'data-autodividers' => 'false', 'data-inset' => 'false', 'data-role' => 'listview' }
+              = render "frontend/controls/#{control_item.kind}", control_item: control_item, control_item_value: device.control_value_for(control_item)
+      %a.ui-btn.ui-btn-inline.ui-corner-all.ui-icon-delete.ui-btn-icon-left{ 'data-rel' => 'close', href: '#devices' } Close
+
+  %div{ 'data-role' => 'header' }
+    %h1 Devices
+
+  .ui-content{ 'data-role' => 'main' }
+    %ul{ 'data-autodividers' => 'false', 'data-inset' => 'true', 'data-role' => 'listview' }
       - @devices.each do |device|
-        %tr
-          %td= device.name
-          %td= device.ip_address
-          %td= device.device_type.name
-
-
+        %li
+          %a{ href: "##{device.id}" }
+            = device.name
