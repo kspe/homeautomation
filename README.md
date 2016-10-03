@@ -17,6 +17,7 @@ Notes:
 Admin app is available here: https://admin.kalm.pl
 
 The usual workflow is:
+
 1. Create `Device Type` record
 2. Add wanted controls to created `Device Type`
 3. Create `Device`
@@ -47,7 +48,7 @@ The apps are deployed to DigitalOcean droplet with IP: 45.55.183.87
 # What is missing
 
 * Specs (as this is a very initial prototype TDD was not used)
-* Security was not take into account (both in ap and server)
+* Security was not take into account (both in app and server)
 * Lack of any authentication
 
 # Known issues
