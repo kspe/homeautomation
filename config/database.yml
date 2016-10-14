@@ -15,6 +15,7 @@ test:
 
 production:
   <<: *default
-  username: rails
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
-  database: home_automation_production
+  host: <%= ENV['PGHOST'] %>
+  username: <%= ENV['PGUSER'] %>
+  password: <%= ENV['PGPASSWORD'] %>
+  database: <%= ENV['PGDATABASE'] %>
