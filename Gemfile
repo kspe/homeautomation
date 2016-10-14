@@ -20,6 +20,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'thin'
 gem 'foreman'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'
