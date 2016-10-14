@@ -18,6 +18,8 @@ gem 'capistrano3-unicorn'
 gem 'vuejs-rails'
 gem 'haml'
 gem 'haml-rails'
+gem 'thin'
+gem 'foreman'
 
 group :development, :test do
   gem 'byebug'
