@@ -54,3 +54,4 @@ The apps are deployed to DigitalOcean droplet with IP: 45.55.183.87
 # Known issues
 
 * It looks like `Citrus Lights` API has CORS enabled and the call to this external API from mobile app is blocked
+
